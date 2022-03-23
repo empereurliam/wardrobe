@@ -3,6 +3,9 @@ h1 {
   text-align: center;
   font-family: "Diwan Thuluth";
 }
+NavLink {
+  color:red;
+}
 * {
   box-sizing: border-box;
   padding: 0;
