@@ -125,9 +125,9 @@ function incrementTops() {
     var element = document.getElementById("mainshirt")
     element.setAttribute('src', tab_tops[indexTopMain]);
     element = document.getElementById("leftshirt")
-    element.setAttribute('src', tab_tops[indexTopRight]);
-    element = document.getElementById("rightshirt")
     element.setAttribute('src', tab_tops[indexTopLeft]);
+    element = document.getElementById("rightshirt")
+    element.setAttribute('src', tab_tops[indexTopRight]);
 }
 
 function decrementTops() {
@@ -149,9 +149,9 @@ function decrementTops() {
     var element = document.getElementById("mainshirt")
     element.setAttribute('src', tab_tops[indexTopMain]);
     element = document.getElementById("leftshirt")
-    element.setAttribute('src', tab_tops[indexTopRight]);
-    element = document.getElementById("rightshirt")
     element.setAttribute('src', tab_tops[indexTopLeft]);
+    element = document.getElementById("rightshirt")
+    element.setAttribute('src', tab_tops[indexTopRight]);
 }
 
 function incrementPants() {
@@ -188,12 +188,12 @@ function decrementPants() {
     if (indexPantsLeft > 0) {
         indexPantsLeft--;
     } else {
-        indexPantsMain = tab_pants.length-1;
+        indexPantsLeft = tab_pants.length-1;
     }
     if (indexPantRight > 0) {
         indexPantRight--;
     } else {
-        indexPantsMain = tab_pants.length-1;
+        indexPantRight = tab_pants.length-1;
     }
     console.log(indexPantsMain);
     var element = document.getElementById("mainpants")
