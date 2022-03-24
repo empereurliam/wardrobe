@@ -2,7 +2,15 @@ h1 {
     color: red;
     text-align: left;
 }
-
+.void5{
+    padding:5px;
+}
+.void20{
+    padding:20px;
+}
+.Resume {
+    text-align: center;
+}
 * {
     box-sizing: border-box;
     padding: 0;
@@ -38,7 +46,7 @@ h1 {
 
 .body {
     display: flex;
-    grid-area: 2 / 2 / 6 / 5;
+    grid-area: 1 / 2 / 6 / 5;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -140,7 +148,7 @@ img {
 
 .right button {
     float: left;
-    width: 10%;
+    width: 20%;
     height: 30%;
     border-radius: 10px;
     background-color: indianred;
@@ -149,7 +157,7 @@ img {
 
 .left button {
     float: right;
-    width: 10%;
+    width: 20%;
     height: 30%;
     border-radius: 10px;
     background-color: indianred;
