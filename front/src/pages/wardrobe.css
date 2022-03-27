@@ -1,0 +1,116 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font: normal 16px sans-serif;
+    color: #555555;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(
+            to right,
+            #FFDCC4 0%,
+            #FFDCC4 70%,
+            #2C2622 70%,
+            #2C2622 100%
+    );
+    display: flex;
+    align-items: center;
+}
+
+ul, nav {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+    opacity: 0.8;
+
+}
+
+a:hover {
+    opacity: 1;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2% 0;
+}
+
+header h1 {
+    font-family: "Gabriela Stencil";
+    color: #2C2622;
+}
+
+span {
+    margin: 0 10px;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row;
+    float: right;
+}
+
+header nav li {
+    color: #FFDCC4;
+    font-family: "Blacker Pro Text";
+
+}
+
+header nav li img {
+    width: 50px;
+    color: #FFDCC4;
+}
+
+@media (max-width: 1200px ) {
+    header nav {
+        flex-direction: column;
+    }
+}
+
+.container {
+    flex-direction: column;
+    overflow: auto;
+
+}
+
+.banner{
+    float: left;
+}
+.titlebanner {
+    font-family: "Blacker Pro Text";
+    font-size: 48px;
+}
+
+.descbanner {
+    font-family: "Blacker Pro Text";
+    font-size: 18px;
+}
+
+.buttonbanner{
+    background: #2C2622;
+    color:white ;
+    padding: 16px;
+    width: 50%;
+    box-shadow: 5px 5px 2px 1px black;
+    cursor: pointer;
+}
+.arrows{
+    display: flex;
+    float: right;
+    right:0px;
+}
