@@ -44,9 +44,9 @@ let indexShoesRight = 2;
 function App() {
   return (
     <div className="App">
-    <div className="void5" />
-    <h2 className="Resume">Try your clothes here and get your style bro !</h2>
-    <p className="Resume">Click on the arrows to change elements.</p>
+      <div className="void5" />
+      <h2 className="Resume">Try your clothes here and get your style bro !</h2>
+      <p className="Resume">Click on the arrows to change elements.</p>
       <div className="void20" />
       <div className="parent1">
         <div className="body">
