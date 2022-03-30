@@ -1,0 +1,101 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: normal 16px sans-serif;
+  color: #555555;
+}
+
+body {
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    #ffdcc4 70%,
+    #2c2622 70%
+  );
+  align-items: center;
+}
+
+ul,
+nav {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2% 0;
+}
+
+span {
+  margin: 0 10px;
+}
+
+.container {
+  height: 100%;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.banner {
+  float: left;
+  margin-top: 25vh;
+  margin-left: 5vw;
+}
+.titlebanner {
+  font-family: "Blacker Pro Text";
+  font-size: 48px;
+}
+
+.descbanner {
+  margin-top: 2vh;
+  font-family: "Blacker Pro Text";
+  font-size: 18px;
+}
+
+.buttonbanner {
+  width: fit-content;
+  background: #2c2622;
+  color: white;
+  margin-top: 1vh;
+  padding: 1vh 3vw;
+  box-shadow: 5px 5px 2px 1px black;
+  cursor: pointer;
+}
+.arrows {
+  display: flex;
+  float: right;
+  right: 0px;
+}
+
+.mannequin {
+  margin-right: 17%;
+  margin-top: 10%;
+}
+
+.logotitle {
+  padding-left: 3vw;
+  padding-top: 4vh;
+  font-family: "Gabriela Stencil";
+  color: #2c2622;
+}
