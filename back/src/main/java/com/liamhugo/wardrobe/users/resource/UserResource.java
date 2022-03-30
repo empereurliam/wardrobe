@@ -54,9 +54,9 @@ public class UserResource {
     @POST
     @Path("{idUser}/clothes")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response addClotheToUser(@PathParam("idUser") Long idUser, ClotheInput livres) {
+    public Response addClotheToUser(@PathParam("idUser") Long idUser, ClotheInput clothes) {
         Optional<User> uOpt = userRepository.findById(idUser);
-        Optional<Clothe> cOpt = clotheRepository.findById(livres.getIdClothe());
+        Optional<Clothe> cOpt = clotheRepository.findById(clothes.getIdClothe());
 
         if (!uOpt.isPresent() || !cOpt.isPresent()) {
             return Response.status(Response.Status.NOT_FOUND).build();

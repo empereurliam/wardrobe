@@ -1,9 +1,8 @@
-
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Nav = styled.nav`
-  background: #7C9ACC;
+  background: #7c9acc;
   height: 40px;
   display: flex;
 `;
@@ -16,9 +15,8 @@ export const NavLink = styled(Link)`
   padding: 0 1rem;
   height: 100%;
   cursor: pointer;
-  font-family: "Arial"
+  font-family: "Arial";
 `;
-
 
 export const NavMenu = styled.div`
   display: flex;
