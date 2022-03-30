@@ -1,63 +1,18 @@
-/*C12*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C21*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C20*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C19*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C18*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C17*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C16*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C15*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C14*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C13*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C22*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C23*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C24*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C25*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C26*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C27*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C28*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C29*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C30*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C31*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C32*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C33*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C34*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C35*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C36*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C37*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C38*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C39*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C40*/SET SCHEMA PUBLIC
-DISCONNECT
-/*C41*/SET SCHEMA PUBLIC
-DISCONNECT
+/*C42*/SET SCHEMA PUBLIC
+create table clothe (id bigint not null, brand varchar(255), photo varbinary(255), price double, type varchar(255), primary key (id))
+create table user (id bigint not null, mail varchar(255), name varchar(255), password varchar(255), primary key (id))
+create table user_clothes (user_id bigint not null, clothes_id bigint not null)
+alter table user_clothes add constraint UK_jj6muvwg5tcjng77nghitib0j unique (clothes_id)
+create sequence hibernate_sequence start with 1 increment by 1
+alter table user_clothes add constraint FKa3ftefb6se08a84unoqb368t0 foreign key (clothes_id) references clothe
+alter table user_clothes add constraint FKobbm5fv0uflhm8iguqvmvodxo foreign key (user_id) references user
+/*C52*/SET SCHEMA PUBLIC
+DROP TABLE USER_CLOTHES
+DROP TABLE USER
+DROP TABLE CLOTHES
+DROP TABLE CLOTHE
+DROP TABLE USERS
+/*C42*/DISCONNECT
 /*C43*/SET SCHEMA PUBLIC
 DISCONNECT
 /*C44*/SET SCHEMA PUBLIC
@@ -72,9 +27,207 @@ DISCONNECT
 DISCONNECT
 /*C49*/SET SCHEMA PUBLIC
 DISCONNECT
-/*C42*/SET SCHEMA PUBLIC
-DISCONNECT
 /*C50*/SET SCHEMA PUBLIC
 DISCONNECT
 /*C51*/SET SCHEMA PUBLIC
 DISCONNECT
+/*C53*/SET SCHEMA PUBLIC
+create table clothe (id bigint not null, brand varchar(255), photo blob(255), price double, type varchar(255), primary key (id))
+create table user (id bigint not null, mail varchar(255), name varchar(255), password varchar(255), primary key (id))
+create table user_clothes (user_id bigint not null, clothes_id bigint not null)
+alter table user_clothes add constraint UK_jj6muvwg5tcjng77nghitib0j unique (clothes_id)
+alter table user_clothes add constraint FKa3ftefb6se08a84unoqb368t0 foreign key (clothes_id) references clothe
+alter table user_clothes add constraint FKobbm5fv0uflhm8iguqvmvodxo foreign key (user_id) references user
+DISCONNECT
+/*C54*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C55*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C56*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C57*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C58*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C59*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C60*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C61*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C62*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C52*/DISCONNECT
+/*C63*/SET SCHEMA PUBLIC
+DROP TABLE USER_CLOTHES
+DROP TABLE USER
+/*C64*/SET SCHEMA PUBLIC
+create table user (id bigint not null, mail varchar(255), name varchar(255), password varchar(255), primary key (id))
+create table user_clothes (user_id bigint not null, clothes_id bigint not null)
+alter table user_clothes add constraint UK_jj6muvwg5tcjng77nghitib0j unique (clothes_id)
+alter table user_clothes add constraint FKa3ftefb6se08a84unoqb368t0 foreign key (clothes_id) references clothe
+alter table user_clothes add constraint FKobbm5fv0uflhm8iguqvmvodxo foreign key (user_id) references user
+/*C63*/DISCONNECT
+/*C74*/SET SCHEMA PUBLIC
+DROP TABLE USER_CLOTHES
+DROP TABLE CLOTHE
+DROP TABLE USER
+/*C64*/DISCONNECT
+/*C65*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C66*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C67*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C68*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C69*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C70*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C71*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C72*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C73*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C75*/SET SCHEMA PUBLIC
+create table clothe (id bigint not null, brand varchar(255), photo varchar(255), price double, type varchar(255), primary key (id))
+create table user (id bigint not null, mail varchar(255), name varchar(255), password varchar(255), primary key (id))
+create table user_clothes (user_id bigint not null, clothes_id bigint not null)
+alter table user_clothes add constraint UK_jj6muvwg5tcjng77nghitib0j unique (clothes_id)
+alter table user_clothes add constraint FKa3ftefb6se08a84unoqb368t0 foreign key (clothes_id) references clothe
+alter table user_clothes add constraint FKobbm5fv0uflhm8iguqvmvodxo foreign key (user_id) references user
+/*C74*/DISCONNECT
+/*C75*/INSERT INTO CLOTHE VALUES(1,'nike','blob:http://localhost:3000/8e3b6bca-5e9e-48d4-b886-f019b208a531',35.6E0,'Haut')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 2
+COMMIT
+INSERT INTO CLOTHE VALUES(2,'nike','blob:http://localhost:3000/8e3b6bca-5e9e-48d4-b886-f019b208a531',35.6E0,'Haut')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 3
+COMMIT
+INSERT INTO CLOTHE VALUES(3,'nike','blob:http://localhost:3000/8e3b6bca-5e9e-48d4-b886-f019b208a531',35.6E0,'Haut')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 4
+COMMIT
+INSERT INTO CLOTHE VALUES(4,'nike','blob:http://localhost:3000/8e3b6bca-5e9e-48d4-b886-f019b208a531',35.6E0,'Pants')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 5
+COMMIT
+INSERT INTO USER VALUES(5,'steven.nzonzi@foot.com','StevenLaZonz','motdepasse')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 6
+COMMIT
+INSERT INTO USER VALUES(6,'steven.nzonzi@foot.com','StevenLaZonz','motdepasse')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 7
+COMMIT
+INSERT INTO USER_CLOTHES VALUES(6,1)
+COMMIT
+DELETE FROM USER_CLOTHES WHERE USER_ID=6 AND CLOTHES_ID=1
+INSERT INTO USER_CLOTHES VALUES(6,1)
+INSERT INTO USER_CLOTHES VALUES(6,3)
+COMMIT
+DELETE FROM USER_CLOTHES WHERE USER_ID=6 AND CLOTHES_ID=1
+DELETE FROM USER_CLOTHES WHERE USER_ID=6 AND CLOTHES_ID=3
+INSERT INTO USER_CLOTHES VALUES(6,1)
+INSERT INTO USER_CLOTHES VALUES(6,3)
+INSERT INTO USER_CLOTHES VALUES(6,4)
+COMMIT
+INSERT INTO CLOTHE VALUES(7,'nike','blob:http://localhost:3000/44b229a2-0533-4fb0-adf6-9ea6d43ea20d',35.6E0,'Pants')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 8
+COMMIT
+DELETE FROM USER_CLOTHES WHERE USER_ID=6 AND CLOTHES_ID=1
+DELETE FROM USER_CLOTHES WHERE USER_ID=6 AND CLOTHES_ID=3
+DELETE FROM USER_CLOTHES WHERE USER_ID=6 AND CLOTHES_ID=4
+INSERT INTO USER_CLOTHES VALUES(6,1)
+INSERT INTO USER_CLOTHES VALUES(6,3)
+INSERT INTO USER_CLOTHES VALUES(6,4)
+INSERT INTO USER_CLOTHES VALUES(6,7)
+COMMIT
+DISCONNECT
+/*C76*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C80*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C81*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C79*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C78*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C77*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C82*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C83*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C84*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C85*/SET SCHEMA PUBLIC
+DROP TABLE USER_CLOTHES
+DROP TABLE USER
+DROP TABLE CLOTHE
+/*C86*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C87*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C88*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C89*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C90*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C91*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C92*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C93*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C94*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C95*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C96*/SET SCHEMA PUBLIC
+create table clothe (id bigint not null, brand varchar(255), photo varchar(255), price varchar(255), type varchar(255), primary key (id))
+create table user (id bigint not null, mail varchar(255), name varchar(255), password varchar(255), primary key (id))
+create table user_clothes (user_id bigint not null, clothes_id bigint not null)
+alter table user_clothes add constraint UK_jj6muvwg5tcjng77nghitib0j unique (clothes_id)
+alter table user_clothes add constraint FKa3ftefb6se08a84unoqb368t0 foreign key (clothes_id) references clothe
+alter table user_clothes add constraint FKobbm5fv0uflhm8iguqvmvodxo foreign key (user_id) references user
+INSERT INTO CLOTHE VALUES(8,'Meme Jean','blob:http://localhost:3000/bdcba48e-398c-4157-88cc-953c19aecdfd','19999999','PANTS')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 9
+COMMIT
+INSERT INTO CLOTHE VALUES(9,'Typhoon','blob:http://localhost:3000/ef9ca3b3-74c3-4095-b7fa-014cc24d916e','0.5','HAT')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 10
+COMMIT
+/*C99*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C102*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C105*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C101*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C103*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C96*/DISCONNECT
+/*C97*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C104*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C100*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C98*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C106*/SET SCHEMA PUBLIC
+INSERT INTO CLOTHE VALUES(10,'Puma','blob:http://localhost:3000/9c7ad2f2-89a0-4661-bd61-c47daba81425','40','TOP')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 11
+COMMIT
+INSERT INTO USER VALUES(11,'steven.nzonzi@foot.com','StevenLaZonz','motdepasse')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 12
+COMMIT
+INSERT INTO USER VALUES(12,'steven.nzonzi@foot.com','StevenLaZonz','motdepasse')
+ALTER SEQUENCE PUBLIC.HIBERNATE_SEQUENCE RESTART WITH 13
+COMMIT
+INSERT INTO USER_CLOTHES VALUES(12,8)
+COMMIT
+DELETE FROM USER_CLOTHES WHERE USER_ID=12 AND CLOTHES_ID=8
+INSERT INTO USER_CLOTHES VALUES(12,8)
+INSERT INTO USER_CLOTHES VALUES(12,9)
+COMMIT

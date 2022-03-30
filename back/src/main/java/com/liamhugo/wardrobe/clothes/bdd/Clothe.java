@@ -19,10 +19,10 @@ public class Clothe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private File photo;
+    private String photo;
     private String type;
     private String brand;
-    private Double price;
+    private String price;
 
     public Long getId() {
         return id;
@@ -32,11 +32,11 @@ public class Clothe {
         this.id = id;
     }
 
-    public File getPhoto() {
+    public String getPhoto() {
         return photo;
     }
 
-    public void setPhoto(File photo) {
+    public void setPhoto(String photo) {
         this.photo = photo;
     }
 
@@ -56,11 +56,11 @@ public class Clothe {
         this.brand = brand;
     }
 
-    public Double getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 }

@@ -30,7 +30,7 @@ const About = () => {
               {user.clothes.map((clothe) => (
                 <div className="cardClothe">
                     <h3>{clothe.type}</h3>
-                    <p>{clothe.photo}</p>
+                    <img src={clothe.photo}/>
                     <p>{clothe.price}</p>
                     <p>{clothe.brand}</p>
                 </div>
