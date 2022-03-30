@@ -1,43 +1,42 @@
 package com.liamhugo.wardrobe.clothes.bdd;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.DynamicUpdate;
+
 import javax.persistence.*;
+import java.awt.*;
+import java.io.File;
 import java.sql.Blob;
 
+@Entity
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@DynamicUpdate
 public class Clothe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
-    private Integer userId;
-    private Blob photo;
+    private Long id;
+    private File photo;
     private String type;
     private String brand;
     private Double price;
 
-    public Clothe() {
-        super();
-    }
-
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Integer userId) {
-        this.userId = userId;
-    }
-
-    public Blob getPhoto() {
+    public File getPhoto() {
         return photo;
     }
 
-    public void setPhoto(Blob photo) {
+    public void setPhoto(File photo) {
         this.photo = photo;
     }
 

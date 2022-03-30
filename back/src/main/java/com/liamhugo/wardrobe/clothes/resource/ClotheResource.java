@@ -17,7 +17,7 @@ public class ClotheResource {
     @Autowired
     private ClotheRepository clotheRepository;
 
-    @GetMapping
+    @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Clothe> listClothe() {
         List<Clothe> clothes = new ArrayList<>();
