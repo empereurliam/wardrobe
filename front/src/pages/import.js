@@ -3,18 +3,21 @@ import axios from "axios";
 
 const Import = () => {
     const [selectedImage, setSelectedImage] = useState(null);
-
     return (
         <div>
             <h1>Upload your clothes</h1>
+            <label from="url">Image URL : </label>
             <input
-                type="file"
+                type="text"
+                id="url_image"
+                /*type="file"
                 name="myImage"
                 onChange={(event) => {
                     console.log(event.target.files[0]);
                     setSelectedImage(event.target.files[0]);
-                }}
+                }}*/
             />
+            <img src="http://cdn.shopify.com/s/files/1/0421/0537/2837/products/packshottshirtblanc_c66b6526-02cb-4e9f-b2e8-abcc82e7d27a_1024x1024.png?v=1606573502" alt="Not found"/>
             {selectedImage && (
                 <div>
                     <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)} />
