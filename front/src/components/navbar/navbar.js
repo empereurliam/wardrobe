@@ -9,7 +9,7 @@ export default function Navbar() {
           <a href="/import">Import</a>
         </li>
         <li>
-          <a className="centerItem" href="/about">About us</a>
+          <a className="centerItem" href="/select">Select</a>
         </li>
         <li>
           <a href="/">

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import About from "./pages/about";
+import Select from "./pages/select";
 import Import from "./pages/import";
 import TryOn from "./pages/tryon";
 import Wardrobe from "./pages/wardrobe";
@@ -12,7 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="" element={<Wardrobe />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/select" element={<Select />} />
         <Route path="/import" element={<Import />} />
         <Route path="/tryon" element={<TryOn />} />
       </Routes>

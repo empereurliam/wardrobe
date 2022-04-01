@@ -18,10 +18,11 @@ public class ClotheResource {
     private ClotheRepository clotheRepository;
 
     @GET
+    @Path("{type}")
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Clothe> listClothe() {
+    public List<Clothe> listClothe(@PathParam("type") String type) {
         List<Clothe> clothes = new ArrayList<>();
-        clotheRepository.findAll().forEach(clothes::add);
+        clotheRepository.findAllByType(type).forEach(clothes::add);
         return clothes;
     }
 

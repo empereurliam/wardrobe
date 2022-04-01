@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import axios from "axios";
 
+const url = "http://assets.stickpng.com/images/580b57fbd9996e24bc43bf36.png";
+
 const Import = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     return (
@@ -17,7 +19,7 @@ const Import = () => {
                     setSelectedImage(event.target.files[0]);
                 }}*/
             />
-            <img src="http://cdn.shopify.com/s/files/1/0421/0537/2837/products/packshottshirtblanc_c66b6526-02cb-4e9f-b2e8-abcc82e7d27a_1024x1024.png?v=1606573502" alt="Not found"/>
+            <img src={url} alt="Not found"/>
             {selectedImage && (
                 <div>
                     <img alt="not found" width={"250px"} src={URL.createObjectURL(selectedImage)} />
