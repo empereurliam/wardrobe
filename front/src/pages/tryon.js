@@ -41,12 +41,11 @@ let indexShoesRight = 2;
 
 var ready = false;
 
-function App() {
+function TryOn() {
 
   useEffect(() => {
     fetchHats();
     console.log(tab_hats);
-    ready = true;
   }, []);
   const fetchHats = () => {
     axios
@@ -58,7 +57,6 @@ function App() {
           console.log(err);
         });
   };
-  if(ready){
     return (
         <div className="App">
           <div className="void5" />
@@ -167,7 +165,6 @@ function App() {
           </div>
         </div>
     );
-  }
 }
 
 function incrementHats() {
@@ -363,4 +360,4 @@ function decrementShoes() {
   element = document.getElementById("rightshoes");
   element.setAttribute("src", tab_shoes[indexShoesRight]);
 }
-export default App;
+export default TryOn;

@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="topnav">
       <ul className="liste">
         <li className="leftItem">
-          <a href="/signIn">Sign in</a>
+          <a href="/signOut">Sign out</a>
         </li>
         <li>
           <a href="/tryon">Try on</a>
