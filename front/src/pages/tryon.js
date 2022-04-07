@@ -135,30 +135,30 @@ function TryOn() {
               </div>
             </div>
             <div className="left">
-              <div className="div1">
+              <div className="arrowhat">
                 <button onClick={decrementHats}>&lt;</button>
               </div>
-              <div className="div2">
+              <div className="arrowshirt">
                 <button onClick={decrementTops}>&lt;</button>
               </div>
-              <div className="div3">
+              <div className="arrowpants">
                 <button onClick={decrementPants}>&lt;</button>
               </div>
-              <div className="div4">
+              <div className="arrowshoes">
                 <button onClick={decrementShoes}>&lt;</button>
               </div>
             </div>
             <div className="right">
-              <div className="div1">
+              <div className="arrowhat">
                 <button onClick={incrementHats}>&gt;</button>
               </div>
-              <div className="div2">
+              <div className="arrowshirt">
                 <button onClick={incrementTops}>&gt;</button>
               </div>
-              <div className="div3">
+              <div className="arrowpants">
                 <button onClick={incrementPants}>&gt;</button>
               </div>
-              <div className="div4">
+              <div className="arrowshoes">
                 <button onClick={incrementShoes}>&gt;</button>
               </div>
             </div>
