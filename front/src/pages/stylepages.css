@@ -227,3 +227,12 @@ img {
 .tops { grid-area: 2 / 1 / 3 / 2; align-items: center; justify-content: center; margin: 2vh 1vw }
 .pants { grid-area: 3 / 1 / 4 / 2; align-items: center; justify-content: center; margin: 2vh 1vw }
 .shoes { grid-area: 4 / 1 / 5 / 2; align-items: center; justify-content: center; margin: 2vh 1vw }
+
+input {
+  margin-left: 1vw;
+  margin-bottom: 2vh;
+}
+
+.user_creation {
+  margin-top: 2vh;
+}

@@ -10,6 +10,11 @@
   justify-content: center;
 }
 
+.leftItem a {
+  color: #2c2622;
+  margin: 0 7vw;
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
   float: right;
@@ -17,6 +22,11 @@
   text-align: center;
   text-decoration: none;
   font-size: 17px;
+}
+
+.leftItem a {
+  color: #2c2622;
+  margin: 0 7vw;
 }
 
 .centerItem {

@@ -4,7 +4,6 @@ package com.liamhugo.wardrobe.clothes.resource;
 import com.liamhugo.wardrobe.clothes.bdd.Clothe;
 import com.liamhugo.wardrobe.clothes.bdd.ClotheRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;

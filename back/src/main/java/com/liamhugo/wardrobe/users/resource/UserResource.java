@@ -33,8 +33,12 @@ public class UserResource {
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public User createUser(User u) {
-        return userRepository.save(u);
+    public Long createUser(User u) {
+        var success = userRepository.save(u);
+        if(success != null) {
+            return success.getId();
+        }
+        return null;
     }
 
     @DELETE

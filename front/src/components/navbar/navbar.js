@@ -5,8 +5,11 @@ export default function Navbar() {
   return (
     <nav className="topnav">
       <ul className="liste">
+        <li className="leftItem">
+          <a href="/signIn">Sign in</a>
+        </li>
         <li>
-          <a href="/import">Import</a>
+          <a href="/tryon">Try on</a>
         </li>
         <li>
           <a className="centerItem" href="/select">Select</a>

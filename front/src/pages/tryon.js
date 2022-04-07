@@ -1,12 +1,9 @@
 import "./stylepages.css";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from "./stylepages.css";
+import axios from "axios";
 let tab_hats = [
-  require("../clothes/hat1.png"),
-  require("../clothes/hat2.png"),
-  require("../clothes/hat3.png"),
-  require("../clothes/hat4.png"),
-  require("../clothes/hat5.png"),
+
 ];
 let tab_tops = [
   require("../clothes/top1.png"),
@@ -41,115 +38,136 @@ let indexPantRight = 2;
 let indexShoesLeft = 0;
 let indexShoesMain = 1;
 let indexShoesRight = 2;
+
+var ready = false;
+
 function App() {
-  return (
-    <div className="App">
-      <div className="void5" />
-      <h2 className="Resume">Try your clothes here and get your style bro !</h2>
-      <p className="Resume">Click on the arrows to change elements.</p>
-      <div className="void20" />
-      <div className="parent1">
-        <div className="body">
-          <div className="mainhat">
-            <img id="mainhat" src={tab_hats[indexHatMain]} />
-          </div>
-          <div className="mainshirt">
-            <img id="mainshirt" src={tab_tops[indexTopMain]} />
-          </div>
-          <div className="mainpants">
-            <img id="mainpants" src={tab_pants[indexPantsMain]} />
-          </div>
-          <div className="mainshoes">
-            <img id="mainshoes" src={tab_shoes[indexShoesMain]} />
-          </div>
-          <div className="lefthat">
-            <img
-              id="lefthat"
-              className="imgside"
-              src={tab_hats[indexHatLeft]}
-            />
-          </div>
-          <div className="leftshirt">
-            <img
-              id="leftshirt"
-              className="imgside"
-              src={tab_tops[indexTopLeft]}
-            />
-          </div>
-          <div className="leftpants">
-            <img
-              id="leftpants"
-              className="imgside"
-              src={tab_pants[indexPantsLeft]}
-            />
-          </div>
-          <div className="leftshoes">
-            <img
-              id="leftshoes"
-              className="imgside"
-              src={tab_shoes[indexShoesLeft]}
-            />
-          </div>
-          <div className="righthat">
-            <img
-              id="righthat"
-              className="imgside"
-              src={tab_hats[indexHatRight]}
-            />
-          </div>
-          <div className="rightshirt">
-            <img
-              id="rightshirt"
-              className="imgside"
-              src={tab_tops[indexTopRight]}
-            />
-          </div>
-          <div className="rightpants">
-            <img
-              id="rightpants"
-              className="imgside"
-              src={tab_pants[indexPantRight]}
-            />
-          </div>
-          <div className="rightshoes">
-            <img
-              id="rightshoes"
-              className="imgside"
-              src={tab_shoes[indexShoesRight]}
-            />
+
+  useEffect(() => {
+    fetchHats();
+    console.log(tab_hats);
+    ready = true;
+  }, []);
+  const fetchHats = () => {
+    axios
+        .get("http://localhost:8080/api/clothes/HAT")
+        .then((res) => {
+          res.data.map((hat_photo) => tab_hats.push(hat_photo.photo));
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  };
+  if(ready){
+    return (
+        <div className="App">
+          <div className="void5" />
+          <h2 className="Resume">Try your clothes here and get your style bro !</h2>
+          <p className="Resume">Click on the arrows to change elements.</p>
+          <div className="void20" />
+          <div className="parent1">
+            <div className="body">
+              <div className="mainhat">
+                <img id="mainhat" src={tab_hats[indexHatMain]} />
+              </div>
+              <div className="mainshirt">
+                <img id="mainshirt" src={tab_tops[indexTopMain]} />
+              </div>
+              <div className="mainpants">
+                <img id="mainpants" src={tab_pants[indexPantsMain]} />
+              </div>
+              <div className="mainshoes">
+                <img id="mainshoes" src={tab_shoes[indexShoesMain]} />
+              </div>
+              <div className="lefthat">
+                <img
+                    id="lefthat"
+                    className="imgside"
+                    src={tab_hats[indexHatLeft]}
+                />
+              </div>
+              <div className="leftshirt">
+                <img
+                    id="leftshirt"
+                    className="imgside"
+                    src={tab_tops[indexTopLeft]}
+                />
+              </div>
+              <div className="leftpants">
+                <img
+                    id="leftpants"
+                    className="imgside"
+                    src={tab_pants[indexPantsLeft]}
+                />
+              </div>
+              <div className="leftshoes">
+                <img
+                    id="leftshoes"
+                    className="imgside"
+                    src={tab_shoes[indexShoesLeft]}
+                />
+              </div>
+              <div className="righthat">
+                <img
+                    id="righthat"
+                    className="imgside"
+                    src={tab_hats[indexHatRight]}
+                />
+              </div>
+              <div className="rightshirt">
+                <img
+                    id="rightshirt"
+                    className="imgside"
+                    src={tab_tops[indexTopRight]}
+                />
+              </div>
+              <div className="rightpants">
+                <img
+                    id="rightpants"
+                    className="imgside"
+                    src={tab_pants[indexPantRight]}
+                />
+              </div>
+              <div className="rightshoes">
+                <img
+                    id="rightshoes"
+                    className="imgside"
+                    src={tab_shoes[indexShoesRight]}
+                />
+              </div>
+            </div>
+            <div className="left">
+              <div className="div1">
+                <button onClick={decrementHats}>&lt;</button>
+              </div>
+              <div className="div2">
+                <button onClick={decrementTops}>&lt;</button>
+              </div>
+              <div className="div3">
+                <button onClick={decrementPants}>&lt;</button>
+              </div>
+              <div className="div4">
+                <button onClick={decrementShoes}>&lt;</button>
+              </div>
+            </div>
+            <div className="right">
+              <div className="div1">
+                <button onClick={incrementHats}>&gt;</button>
+              </div>
+              <div className="div2">
+                <button onClick={incrementTops}>&gt;</button>
+              </div>
+              <div className="div3">
+                <button onClick={incrementPants}>&gt;</button>
+              </div>
+              <div className="div4">
+                <button onClick={incrementShoes}>&gt;</button>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="left">
-          <div className="div1">
-            <button onClick={decrementHats}>&lt;</button>
-          </div>
-          <div className="div2">
-            <button onClick={decrementTops}>&lt;</button>
-          </div>
-          <div className="div3">
-            <button onClick={decrementPants}>&lt;</button>
-          </div>
-          <div className="div4">
-            <button onClick={decrementShoes}>&lt;</button>
-          </div>
-        </div>
-        <div className="right">
-          <div className="div1">
-            <button onClick={incrementHats}>&gt;</button>
-          </div>
-          <div className="div2">
-            <button onClick={incrementTops}>&gt;</button>
-          </div>
-          <div className="div3">
-            <button onClick={incrementPants}>&gt;</button>
-          </div>
-          <div className="div4">
-            <button onClick={incrementShoes}>&gt;</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+    );
+  }
 }
 
 function incrementHats() {
