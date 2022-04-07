@@ -8,12 +8,12 @@ const Select = () => {
   const [shoes, setShoes] = useState([]);
 
   useEffect(() => {
-    fetchClothes();
+    fetchHats();
     fetchTops();
     fetchPants();
     fetchShoes();
   }, []);
-  const fetchClothes = () => {
+  const fetchHats = () => {
     axios
       .get("http://localhost:8080/api/clothes/HAT")
       .then((res) => {
