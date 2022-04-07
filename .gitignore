@@ -32,3 +32,4 @@ build/
 ### VS Code ###
 .vscode/
 front/src/clothes/.DS_Store
+back/hsqldb-2.6.1 2/hsqldb/hsqldb/demodb.script
