@@ -8,28 +8,29 @@ let tab_pants_temp = [];
 let tab_shoes_temp = [];
 const TryOn = () => {
   const [tabHats, setTabHats] = useState([]);
-  const [tabHatsMainIndex, setTabHatsMainIndex] = useState();
-  const [tabHatsLeftIndex, setTabHatsLeftIndex] = useState();
-  const [tabHatsRightIndex, setTabHatsRightIndex] = useState();
+  const [tabHatsMainIndex, setTabHatsMainIndex] = useState(1);
+  const [tabHatsLeftIndex, setTabHatsLeftIndex] = useState(0);
+  const [tabHatsRightIndex, setTabHatsRightIndex] = useState(2);
   const [tabTops, setTabTops] = useState([]);
-  const [tabTopsMainIndex, setTabTopsMainIndex] = useState();
-  const [tabTopsLeftIndex, setTabTopsLeftIndex] = useState();
-  const [tabTopsRightIndex, setTabTopsRightIndex] = useState();
+  const [tabTopsMainIndex, setTabTopsMainIndex] = useState(1);
+  const [tabTopsLeftIndex, setTabTopsLeftIndex] = useState(0);
+  const [tabTopsRightIndex, setTabTopsRightIndex] = useState(2);
   const [tabPants, setTabPants] = useState([]);
-  const [tabPantsMainIndex, setTabPantsMainIndex] = useState();
-  const [tabPantsLeftIndex, setTabPantsLeftIndex] = useState();
-  const [tabPantsRightIndex, setTabPantsRightIndex] = useState();
+  const [tabPantsMainIndex, setTabPantsMainIndex] = useState(1);
+  const [tabPantsLeftIndex, setTabPantsLeftIndex] = useState(0);
+  const [tabPantsRightIndex, setTabPantsRightIndex] = useState(2);
   const [tabShoes, setTabShoes] = useState([]);
-  const [tabShoesMainIndex, setTabShoesMainIndex] = useState();
-  const [tabShoesLeftIndex, setTabShoesLeftIndex] = useState();
-  const [tabShoesRightIndex, setTabShoesRightIndex] = useState();
+  const [tabShoesMainIndex, setTabShoesMainIndex] = useState(1);
+  const [tabShoesLeftIndex, setTabShoesLeftIndex] = useState(0);
+  const [tabShoesRightIndex, setTabShoesRightIndex] = useState(2);
 
   useEffect(() => {
+    console.log("test");
     fetchHats();
     fetchTops();
     fetchPants();
     fetchShoes();
-    console.log(tabHats.length)
+    console.log(tabHats.length);
   }, []);
   const fetchHats = () => {
     axios
@@ -37,9 +38,8 @@ const TryOn = () => {
       .then((res) => {
         res.data.map((hat_photo) => tab_hats_temp.push(hat_photo.photo));
         setTabHats(tab_hats_temp);
-        setTabHatsMainIndex(tabHats.length >= 1 ? 1 : 0);
-        setTabHatsLeftIndex(0);
-        setTabHatsRightIndex(tabHats.length >= 2 ? 0 : 2);
+        setTabHatsMainIndex(tab_hats_temp.length > 1 ? 1 : 0)
+        setTabHatsRightIndex(tab_hats_temp.length > 2 ? 2 : 0)
       })
       .catch((err) => {
         console.log(err);
@@ -51,9 +51,8 @@ const TryOn = () => {
       .then((res) => {
         res.data.map((top_photo) => tab_tops_temp.push(top_photo.photo));
         setTabTops(tab_tops_temp);
-        setTabTopsMainIndex(tabTops.length >= 1 ? 1 : 0);
-        setTabTopsLeftIndex(0);
-        setTabTopsRightIndex(tabTops.length >= 2 ? 0 : 2);
+        setTabTopsMainIndex(tab_tops_temp.length > 1 ? 1 : 0)
+        setTabTopsRightIndex(tab_tops_temp.length > 2 ? 2 : 0)
       })
       .catch((err) => {
         console.log(err);
@@ -65,9 +64,8 @@ const TryOn = () => {
       .then((res) => {
         res.data.map((pant_photo) => tab_pants_temp.push(pant_photo.photo));
         setTabPants(tab_pants_temp);
-        setTabPantsMainIndex(tabPants.length >= 1 ? 1 : 0);
-        setTabPantsLeftIndex(0);
-        setTabPantsRightIndex(tabPants.length >= 2 ? 0 : 2);
+        setTabPantsMainIndex(tab_pants_temp.length > 1 ? 1 : 0)
+        setTabPantsRightIndex(tab_pants_temp.length > 2 ? 2 : 0)
       })
       .catch((err) => {
         console.log(err);
@@ -79,9 +77,8 @@ const TryOn = () => {
       .then((res) => {
         res.data.map((shoes_photo) => tab_shoes_temp.push(shoes_photo.photo));
         setTabShoes(tab_shoes_temp);
-        setTabShoesMainIndex(tabShoes.length >= 1 ? 1 : 0);
-        setTabShoesLeftIndex(0);
-        setTabShoesRightIndex(tabShoes.length >= 2 ? 0 : 2);
+        setTabShoesMainIndex(tab_shoes_temp.length > 1 ? 1 : 0)
+        setTabShoesRightIndex(tab_shoes_temp.length > 2 ? 2 : 0)
       })
       .catch((err) => {
         console.log(err);
@@ -96,22 +93,39 @@ const TryOn = () => {
       <div className="parent1">
         <div className="body">
           <div className="mainhat">
-            <img id="mainhat" src={tabHats[tabHatsMainIndex]} />
+            <img
+              id="mainhat"
+              src={tabHats[tabHatsMainIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
+            />
           </div>
           <div className="mainshirt">
-            <img id="mainshirt" src={tabTops[tabTopsMainIndex]} />
+            <img
+              id="mainshirt"
+              src={tabTops[tabTopsMainIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
+            />
           </div>
           <div className="mainpants">
-            <img id="mainpants" src={tabPants[tabPantsMainIndex]} />
+            <img
+              id="mainpants"
+              src={tabPants[tabPantsMainIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
+            />
           </div>
           <div className="mainshoes">
-            <img id="mainshoes" src={tabShoes[tabShoesMainIndex]} />
+            <img
+              id="mainshoes"
+              src={tabShoes[tabShoesMainIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
+            />
           </div>
           <div className="lefthat">
             <img
               id="lefthat"
               className="imgside"
               src={tabHats[tabHatsLeftIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
             />
           </div>
           <div className="leftshirt">
@@ -119,6 +133,7 @@ const TryOn = () => {
               id="leftshirt"
               className="imgside"
               src={tabTops[tabTopsLeftIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
             />
           </div>
           <div className="leftpants">
@@ -126,6 +141,7 @@ const TryOn = () => {
               id="leftpants"
               className="imgside"
               src={tabPants[tabPantsLeftIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
             />
           </div>
           <div className="leftshoes">
@@ -133,6 +149,7 @@ const TryOn = () => {
               id="leftshoes"
               className="imgside"
               src={tabShoes[tabShoesLeftIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
             />
           </div>
           <div className="righthat">
@@ -140,6 +157,7 @@ const TryOn = () => {
               id="righthat"
               className="imgside"
               src={tabHats[tabHatsRightIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
             />
           </div>
           <div className="rightshirt">
@@ -147,6 +165,7 @@ const TryOn = () => {
               id="rightshirt"
               className="imgside"
               src={tabTops[tabTopsRightIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
             />
           </div>
           <div className="rightpants">
@@ -154,6 +173,7 @@ const TryOn = () => {
               id="rightpants"
               className="imgside"
               src={tabPants[tabPantsRightIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
             />
           </div>
           <div className="rightshoes">
@@ -161,6 +181,7 @@ const TryOn = () => {
               id="rightshoes"
               className="imgside"
               src={tabShoes[tabShoesRightIndex]}
+              alt="ERREUR, l'image n'a pas pu être trouvée"
             />
           </div>
         </div>
