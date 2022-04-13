@@ -99,3 +99,8 @@ span {
   font-family: "Gabriela Stencil";
   color: #2c2622;
 }
+
+.signout {
+  text-align: center;
+  padding-top: 7vw;
+}
