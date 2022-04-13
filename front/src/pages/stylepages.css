@@ -164,10 +164,6 @@ img {
   opacity: 0.8;
 }
 
-#mainshoes {
-  max-width: 30%;
-}
-
 .hat_item {
   max-height: 8%;
   border: 1px solid #2c2622;
@@ -175,7 +171,13 @@ img {
   float: left;
   margin-top: 4vh;
   margin-right: 1vw;
-  height: 20vh
+  height: 20vh;
+  display: flex;
+}
+
+.hat_item img {
+  max-width: 10vw;
+  margin: auto;
 }
 
 .top_item {
@@ -185,7 +187,13 @@ img {
   float: left;
   margin-top: 4vh;
   margin-right: 1vw;
-  height: 20vh
+  height: 20vh;
+  display: flex;
+}
+
+.top_item img {
+  max-width: 20vw;
+  margin: auto;
 }
 
 .pants_item {
@@ -195,7 +203,13 @@ img {
   float: left;
   margin-top: 4vh;
   margin-right: 1vw;
-  height: 30vh
+  height: 30vh;
+  display: flex;
+}
+
+.pants_item img {
+  max-width: 10vw;
+  margin: auto;
 }
 
 .shoes_item {
@@ -205,7 +219,13 @@ img {
   float: left;
   margin-top: 4vh;
   margin-right: 1vw;
-  height: 20vh
+  height: 20vh;
+  display: flex;
+}
+
+.shoes_item img {
+  max-width: 10vw;
+  margin: auto;
 }
 
 .w-70 {
@@ -223,10 +243,30 @@ img {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-.hats { grid-area: 1 / 1 / 2 / 2; align-items: center; justify-content: center; margin: 2vh 1vw }
-.tops { grid-area: 2 / 1 / 3 / 2; align-items: center; justify-content: center; margin: 2vh 1vw }
-.pants { grid-area: 3 / 1 / 4 / 2; align-items: center; justify-content: center; margin: 2vh 1vw }
-.shoes { grid-area: 4 / 1 / 5 / 2; align-items: center; justify-content: center; margin: 2vh 1vw }
+.hats {
+  grid-area: 1 / 1 / 2 / 2;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 1vw;
+}
+.tops {
+  grid-area: 2 / 1 / 3 / 2;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 1vw;
+}
+.pants {
+  grid-area: 3 / 1 / 4 / 2;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 1vw;
+}
+.shoes {
+  grid-area: 4 / 1 / 5 / 2;
+  align-items: center;
+  justify-content: center;
+  margin: 2vh 1vw;
+}
 
 input {
   margin-left: 1vw;
@@ -235,4 +275,10 @@ input {
 
 .user_creation {
   margin-top: 2vh;
+}
+
+#validate {
+  position: fixed;
+  bottom: 3%;
+  right:32%;
 }

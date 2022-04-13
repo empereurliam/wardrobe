@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import App from "../App";
+import TaskAltIcon from "@mui/icons-material/TaskAlt";
+import { Button } from "@mui/material";
 
 const Select = () => {
   const [hats, setHats] = useState([]);
@@ -11,6 +12,7 @@ const Select = () => {
   const [topsSelected, setTopsSelected] = useState([]);
   const [pantsSelected, setPantsSelected] = useState([]);
   const [shoesSelected, setShoesSelected] = useState([]);
+  const selected_clothes = [];
 
   const handleClick = (tabSelected, setSelected, id) => {
     const dict_temp = tabSelected;
@@ -18,11 +20,17 @@ const Select = () => {
     setSelected(dict_temp);
     if (tabSelected[id]) {
       console.log("selected");
+      selected_clothes.push(id);
       document.getElementById(id).style.border = "3px solid";
     } else {
       console.log("not selected");
+      const index = selected_clothes.indexOf(id);
+      if (index > -1) {
+        selected_clothes.splice(index, 1);
+      }
       document.getElementById(id).style.border = "1px solid";
     }
+    console.log(selected_clothes);
   };
 
   useEffect(() => {
@@ -33,7 +41,7 @@ const Select = () => {
   }, []);
   const fetchHats = () => {
     axios
-      .get("http://localhost:8080/api/clothes/HAT")
+      .get("http://localhost:8080/api/clothes/HATS")
       .then((res) => {
         setHats(res.data);
         const dict_temp = [];
@@ -110,7 +118,6 @@ const Select = () => {
               }
             >
               <img src={hats.photo} />
-              <p className="mt-1">{hats.brand}</p>
             </div>
           ))}
         </div>
@@ -127,7 +134,6 @@ const Select = () => {
               }
             >
               <img src={tops.photo} />
-              <p className="mt-1">{tops.brand}</p>
             </div>
           ))}
         </div>
@@ -144,7 +150,6 @@ const Select = () => {
               }
             >
               <img src={pants.photo} />
-              <p className="mt-1">{pants.brand}</p>
             </div>
           ))}
         </div>
@@ -161,13 +166,34 @@ const Select = () => {
               }
             >
               <img src={shoes.photo} />
-              <p className="mt-1">{shoes.brand}</p>
             </div>
           ))}
         </div>
       </div>
+      <Button onClick={addClothesToUser} id="validate" variant="outlined" startIcon={<TaskAltIcon />}>
+        ADD
+      </Button>
     </div>
   );
+
+  function addClothesToUser() {
+      for (const id of selected_clothes) {
+          console.log(id);
+          const options = {
+              method: 'POST',
+              url: 'http://localhost:8080/api/users/'+sessionStorage.getItem('token')+'/clothes',
+              params: {'': ''},
+              headers: {'Content-Type': 'application/json'},
+              data: {idClothe: id}
+          };
+
+          axios.request(options).then(function (response) {
+              console.log(response.data);
+          }).catch(function (error) {
+              console.error(error);
+          });
+      }
+  }
 };
 
 export default Select;

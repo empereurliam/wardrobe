@@ -8,7 +8,7 @@ import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.LinkedHashSet;
+import java.util.Set;
 
 @Entity
 @Data
@@ -22,8 +22,8 @@ public class User {
     private String mail;
     private String password;
     private String name;
-    @OneToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
-    private Collection<Clothe> clothes;
+    @ManyToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+    Set<Clothe> clothes;
 
     public Long getId() {
         return id;
@@ -57,7 +57,7 @@ public class User {
         this.name = name;
     }
 
-    public Collection<Clothe> getClothes() { return clothes; }
+    public Set<Clothe> getClothes() { return clothes; }
 
-    public void setClothes(Collection<Clothe> clothes) { this.clothes = clothes; }
+    public void setClothes(Set<Clothe> clothes) { this.clothes = clothes; }
 }
