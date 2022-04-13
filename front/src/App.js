@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Select from "./pages/select";
 import Import from "./pages/import";
+import SignOut from "./pages/signout"
 import TryOn from "./pages/tryon";
 import Wardrobe from "./pages/wardrobe";
 import Navbar from "./components/navbar/navbar";
@@ -27,6 +28,7 @@ export default function App() {
             <Route path="/select" element={<Select />} />
             <Route path="/import" element={<Import />} />
             <Route path="/tryon" element={<TryOn />} />
+            <Route path="/signout" element={<SignOut />} />
           </Routes>
         </BrowserRouter>
       </div>
