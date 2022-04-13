@@ -4,10 +4,11 @@ import "../App.js"
 const SignOut = () => {
     return(
         <body>
-            Do you want to sign out ?
-            <div>
+
+            <div className="signout">
+                <h2 >Do you really want to sign out ?</h2>
                 <a href="/">
-                    <button onClick={signOut}>Sign Out</button>
+                    <button className="buttonbanner" onClick={signOut}>Sign Out</button>
                 </a>
                 </div>
             </body>

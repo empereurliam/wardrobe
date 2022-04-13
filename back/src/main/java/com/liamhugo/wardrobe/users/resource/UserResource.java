@@ -31,12 +31,27 @@ public class UserResource {
     }
 
     @POST
+    @Path("signup")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Long createUser(User u) {
         var success = userRepository.save(u);
         if(success != null) {
             return success.getId();
+        }
+        return null;
+    }
+
+    @POST
+    @Path("signin")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Long userPresent(UserInput user) {
+        List<User> users = new ArrayList<>();
+        userRepository.findAllByMailAndPassword(user.getMail(), user.getPassword()).forEach(users::add);
+        if(!users.isEmpty()) {
+            System.out.println(users.toString());
+            return users.get(0).getId();
         }
         return null;
     }
