@@ -7,25 +7,22 @@ const Select = () => {
   const [tops, setTops] = useState([]);
   const [pants, setPants] = useState([]);
   const [shoes, setShoes] = useState([]);
+  const [hatsSelected, setHatsSelected] = useState([]);
+  const [topsSelected, setTopsSelected] = useState([]);
+  const [pantsSelected, setPantsSelected] = useState([]);
+  const [shoesSelected, setShoesSelected] = useState([]);
 
-  const handleClick = async (e) => {
-    console.log("on passe ici");
-    e.target.classList.contains("selected")
-      ? e.target.classList.remove("selected")
-      : e.target.classList.add("selected");
-    console.log(e.target.classList);
-    console.log(e);
-  };
-
-  const isActive = (e) => {
-        console.log("on passe là");
-        if(e.target.classList.contains("selected")) {
-            console.log("true");
-            return true;
-        } else {
-            console.log("false");
-            return false;
-        }
+  const handleClick = (tabSelected, setSelected, id) => {
+    const dict_temp = tabSelected;
+    dict_temp[id] = !dict_temp[id];
+    setSelected(dict_temp);
+    if (tabSelected[id]) {
+      console.log("selected");
+      document.getElementById(id).style.border = "3px solid";
+    } else {
+      console.log("not selected");
+      document.getElementById(id).style.border = "1px solid";
+    }
   };
 
   useEffect(() => {
@@ -39,6 +36,12 @@ const Select = () => {
       .get("http://localhost:8080/api/clothes/HAT")
       .then((res) => {
         setHats(res.data);
+        const dict_temp = [];
+        res.data.map((hat) => {
+          dict_temp[hat.id] = false;
+          console.log("on ajoute");
+        });
+        setHatsSelected(dict_temp);
       })
       .catch((err) => {
         console.log(err);
@@ -49,6 +52,13 @@ const Select = () => {
       .get("http://localhost:8080/api/clothes/TOP")
       .then((res) => {
         setTops(res.data);
+        console.log(tops);
+        const dict_temp = [];
+        res.data.map((top) => {
+          dict_temp[top.id] = false;
+          console.log("on ajoute");
+        });
+        setTopsSelected(dict_temp);
       })
       .catch((err) => {
         console.log(err);
@@ -59,6 +69,12 @@ const Select = () => {
       .get("http://localhost:8080/api/clothes/PANTS")
       .then((res) => {
         setPants(res.data);
+        const dict_temp = [];
+        res.data.map((pants) => {
+          dict_temp[pants.id] = false;
+          console.log("on ajoute");
+        });
+        setPantsSelected(dict_temp);
       })
       .catch((err) => {
         console.log(err);
@@ -69,6 +85,12 @@ const Select = () => {
       .get("http://localhost:8080/api/clothes/SHOES")
       .then((res) => {
         setShoes(res.data);
+        const dict_temp = [];
+        res.data.map((shoes) => {
+          dict_temp[shoes.id] = false;
+          console.log("on ajoute");
+        });
+        setShoesSelected(dict_temp);
       })
       .catch((err) => {
         console.log(err);
@@ -80,7 +102,13 @@ const Select = () => {
         <h2>Select your HATS</h2>
         <div className="item-container">
           {hats.map((hats) => (
-            <div className="hat_item">
+            <div
+              className="hat_item"
+              id={hats.id}
+              onClick={() =>
+                handleClick(hatsSelected, setHatsSelected, hats.id)
+              }
+            >
               <img src={hats.photo} />
               <p className="mt-1">{hats.brand}</p>
             </div>
@@ -91,7 +119,13 @@ const Select = () => {
         <h2>Select your TOPS</h2>
         <div className="item-container">
           {tops.map((tops) => (
-            <div className={"top_item"} onClick={handleClick}>
+            <div
+              className={"top_item"}
+              id={tops.id}
+              onClick={() =>
+                handleClick(topsSelected, setTopsSelected, tops.id)
+              }
+            >
               <img src={tops.photo} />
               <p className="mt-1">{tops.brand}</p>
             </div>
@@ -102,7 +136,13 @@ const Select = () => {
         <h2>Select your PANTS</h2>
         <div className="item-container">
           {pants.map((pants) => (
-            <div className="pants_item">
+            <div
+              className="pants_item"
+              id={pants.id}
+              onClick={() =>
+                handleClick(pantsSelected, setPantsSelected, pants.id)
+              }
+            >
               <img src={pants.photo} />
               <p className="mt-1">{pants.brand}</p>
             </div>
@@ -113,7 +153,13 @@ const Select = () => {
         <h2>Select your SHOES</h2>
         <div className="item-container">
           {shoes.map((shoes) => (
-            <div className="shoes_item">
+            <div
+              className="shoes_item"
+              id={shoes.id}
+              onClick={() =>
+                handleClick(shoesSelected, setShoesSelected, shoes.id)
+              }
+            >
               <img src={shoes.photo} />
               <p className="mt-1">{shoes.brand}</p>
             </div>

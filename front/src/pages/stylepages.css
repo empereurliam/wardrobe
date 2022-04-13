@@ -178,6 +178,16 @@ img {
   height: 20vh
 }
 
+.top_item {
+  max-height: 15%;
+  border: 1px solid #2c2622;
+  border-radius: 7px;
+  float: left;
+  margin-top: 4vh;
+  margin-right: 1vw;
+  height: 20vh
+}
+
 .pants_item {
   max-height: 15%;
   border: 1px solid #2c2622;
@@ -225,19 +235,4 @@ input {
 
 .user_creation {
   margin-top: 2vh;
-}
-
-.selected {
-  border-radius: 20px;
-  max-height: 15%;
-  border: 1px solid #2c2622;
-  float: left;
-  margin-top: 4vh;
-  margin-right: 1vw;
-  height: 20vh
-}
-
-.not_selected {
-  border-radius: 5px;
-  background-color: #04aa6d;
 }
