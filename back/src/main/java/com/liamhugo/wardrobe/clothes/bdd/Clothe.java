@@ -1,14 +1,13 @@
 package com.liamhugo.wardrobe.clothes.bdd;
 
+import com.liamhugo.wardrobe.users.bdd.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.awt.*;
-import java.io.File;
-import java.sql.Blob;
+import java.util.Set;
 
 @Entity
 @Data
@@ -23,6 +22,8 @@ public class Clothe {
     private String type;
     private String brand;
     private String price;
+    @ManyToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+    Set<User> users;
 
     public Long getId() {
         return id;
@@ -63,4 +64,8 @@ public class Clothe {
     public void setPrice(String price) {
         this.price = price;
     }
+
+    public Set<User> getUsers() { return users; }
+
+    public void setUsers(Set<User> users) { this.users = users; }
 }
