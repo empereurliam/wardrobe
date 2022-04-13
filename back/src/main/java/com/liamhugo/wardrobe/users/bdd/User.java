@@ -22,7 +22,7 @@ public class User {
     private String mail;
     private String password;
     private String name;
-    @ManyToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+    @ManyToMany(fetch= FetchType.EAGER)
     Set<Clothe> clothes;
 
     public Long getId() {

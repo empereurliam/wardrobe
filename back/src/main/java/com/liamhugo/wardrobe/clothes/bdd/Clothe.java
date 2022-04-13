@@ -22,7 +22,7 @@ public class Clothe {
     private String type;
     private String brand;
     private String price;
-    @ManyToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+    @ManyToMany(fetch= FetchType.EAGER)
     Set<User> users;
 
     public Long getId() {

@@ -41,7 +41,7 @@ const Select = () => {
   }, []);
   const fetchHats = () => {
     axios
-      .get("http://localhost:8080/api/clothes/HATS")
+      .get("http://localhost:8080/api/clothes/HAT")
       .then((res) => {
         setHats(res.data);
         const dict_temp = [];
