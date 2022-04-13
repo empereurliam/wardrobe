@@ -32,7 +32,7 @@ const TryOn = () => {
   }, []);
   const fetchHats = () => {
     axios
-      .get("http://localhost:8080/api/clothes/HAT")
+      .get("http://localhost:8080/api/users/"+sessionStorage.getItem('token')+"/clothes/HAT")
       .then((res) => {
         res.data.map((hat_photo) => tab_hats_temp.push(hat_photo.photo));
         setTabHats(tab_hats_temp);
@@ -45,7 +45,7 @@ const TryOn = () => {
   };
   const fetchTops = () => {
     axios
-      .get("http://localhost:8080/api/clothes/TOP")
+      .get("http://localhost:8080/api/users/"+sessionStorage.getItem('token')+"/clothes/TOP")
       .then((res) => {
         res.data.map((top_photo) => tab_tops_temp.push(top_photo.photo));
         setTabTops(tab_tops_temp);
@@ -58,7 +58,7 @@ const TryOn = () => {
   };
   const fetchPants = () => {
     axios
-      .get("http://localhost:8080/api/clothes/PANTS")
+      .get("http://localhost:8080/api/users/"+sessionStorage.getItem('token')+"/clothes/PANTS")
       .then((res) => {
         res.data.map((pant_photo) => tab_pants_temp.push(pant_photo.photo));
         setTabPants(tab_pants_temp);
@@ -71,7 +71,7 @@ const TryOn = () => {
   };
   const fetchShoes = () => {
     axios
-      .get("http://localhost:8080/api/clothes/SHOES")
+      .get("http://localhost:8080/api/users/"+sessionStorage.getItem('token')+"/clothes/SHOES")
       .then((res) => {
         res.data.map((shoes_photo) => tab_shoes_temp.push(shoes_photo.photo));
         setTabShoes(tab_shoes_temp);
