@@ -1,6 +1,4 @@
-import "./stylepages.css";
 import React, { useEffect, useState } from "react";
-import styles from "./stylepages.css";
 import axios from "axios";
 let tab_hats_temp = [];
 let tab_tops_temp = [];
@@ -85,8 +83,9 @@ const TryOn = () => {
       });
   };
   return (
+  <body>
     <div className="App">
-      <div className="void5" />
+      <div className="void20" />
       <h2 className="Resume">Try your clothes here and get your style bro !</h2>
       <p className="Resume">Click on the arrows to change elements.</p>
       <div className="void20" />
@@ -215,6 +214,7 @@ const TryOn = () => {
         </div>
       </div>
     </div>
+    </body>
   );
 
   function incrementHats() {

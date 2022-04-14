@@ -6,7 +6,7 @@ const url = "http://assets.stickpng.com/images/580b57fbd9996e24bc43bf36.png";
 const Import = () => {
     const [selectedImage, setSelectedImage] = useState(null);
     return (
-        <div>
+        <body>
             <h1>Upload your clothes</h1>
             <label from="url">Image URL : </label>
             <input
@@ -48,7 +48,7 @@ const Import = () => {
 
 
             <br />
-        </div>
+        </body>
     );
 
     function post() {
