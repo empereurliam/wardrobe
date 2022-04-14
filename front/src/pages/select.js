@@ -105,6 +105,7 @@ const Select = () => {
       });
   };
   return (
+  <body>
     <div className="select_clothes w-70">
       <div className="hats">
         <h2>Select your HATS</h2>
@@ -174,6 +175,7 @@ const Select = () => {
         ADD
       </Button>
     </div>
+    </body>
   );
 
   function addClothesToUser() {

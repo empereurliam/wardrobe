@@ -49,6 +49,7 @@ export default function SignIn({ setToken }) {
 
   if (accountExist) {
     return (
+    <body>
       <div className="login-wrapper">
         <h1>Please Sign In</h1>
         <button type="submit" onClick={() => setAccountExist(false)}>
@@ -71,9 +72,11 @@ export default function SignIn({ setToken }) {
           </div>
         </form>
       </div>
+      </body>
     );
   } else {
     return (
+    <body>
       <div className="login-wrapper">
         <h1>Please Sign Up</h1>
         <button type="submit" onClick={() => setAccountExist(true)}>
@@ -100,6 +103,7 @@ export default function SignIn({ setToken }) {
           </div>
         </form>
       </div>
+     </body>
     );
   }
 }

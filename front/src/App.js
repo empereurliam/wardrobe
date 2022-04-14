@@ -12,13 +12,11 @@ import useToken from "./components/token/useToken";
 export default function App() {
   const { token, setToken } = useToken();
 
-  console.log("repasse par ici");
-
   if (!token) {
-    console.log("pas connecté");
+    console.log("not connected");
     return <SignIn setToken={setToken} />;
   } else {
-    console.log("connecté");
+    console.log("connected");
     return (
       <div className="wrapper">
         <BrowserRouter>
