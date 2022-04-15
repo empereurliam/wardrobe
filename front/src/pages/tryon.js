@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import IconButton from "@mui/material/IconButton";
+import ArrowLeftRoundedIcon from "@mui/icons-material/ArrowLeftRounded";
+import ArrowRightRoundedIcon from "@mui/icons-material/ArrowRightRounded";
+
 let tab_hats_temp = [];
 let tab_tops_temp = [];
 let tab_pants_temp = [];
@@ -32,12 +36,16 @@ const TryOn = () => {
   }, []);
   const fetchHats = () => {
     axios
-      .get("http://localhost:8080/api/users/"+sessionStorage.getItem('token')+"/clothes/HAT")
+      .get(
+        "http://localhost:8080/api/users/" +
+          sessionStorage.getItem("token") +
+          "/clothes/HAT"
+      )
       .then((res) => {
         res.data.map((hat_photo) => tab_hats_temp.push(hat_photo.photo));
         setTabHats(tab_hats_temp);
-        setTabHatsMainIndex(tab_hats_temp.length > 1 ? 1 : 0)
-        setTabHatsRightIndex(tab_hats_temp.length > 2 ? 2 : 0)
+        setTabHatsMainIndex(tab_hats_temp.length > 1 ? 1 : 0);
+        setTabHatsRightIndex(tab_hats_temp.length > 2 ? 2 : 0);
       })
       .catch((err) => {
         console.log(err);
@@ -45,12 +53,16 @@ const TryOn = () => {
   };
   const fetchTops = () => {
     axios
-      .get("http://localhost:8080/api/users/"+sessionStorage.getItem('token')+"/clothes/TOP")
+      .get(
+        "http://localhost:8080/api/users/" +
+          sessionStorage.getItem("token") +
+          "/clothes/TOP"
+      )
       .then((res) => {
         res.data.map((top_photo) => tab_tops_temp.push(top_photo.photo));
         setTabTops(tab_tops_temp);
-        setTabTopsMainIndex(tab_tops_temp.length > 1 ? 1 : 0)
-        setTabTopsRightIndex(tab_tops_temp.length > 2 ? 2 : 0)
+        setTabTopsMainIndex(tab_tops_temp.length > 1 ? 1 : 0);
+        setTabTopsRightIndex(tab_tops_temp.length > 2 ? 2 : 0);
       })
       .catch((err) => {
         console.log(err);
@@ -58,12 +70,16 @@ const TryOn = () => {
   };
   const fetchPants = () => {
     axios
-      .get("http://localhost:8080/api/users/"+sessionStorage.getItem('token')+"/clothes/PANTS")
+      .get(
+        "http://localhost:8080/api/users/" +
+          sessionStorage.getItem("token") +
+          "/clothes/PANTS"
+      )
       .then((res) => {
         res.data.map((pant_photo) => tab_pants_temp.push(pant_photo.photo));
         setTabPants(tab_pants_temp);
-        setTabPantsMainIndex(tab_pants_temp.length > 1 ? 1 : 0)
-        setTabPantsRightIndex(tab_pants_temp.length > 2 ? 2 : 0)
+        setTabPantsMainIndex(tab_pants_temp.length > 1 ? 1 : 0);
+        setTabPantsRightIndex(tab_pants_temp.length > 2 ? 2 : 0);
       })
       .catch((err) => {
         console.log(err);
@@ -71,156 +87,204 @@ const TryOn = () => {
   };
   const fetchShoes = () => {
     axios
-      .get("http://localhost:8080/api/users/"+sessionStorage.getItem('token')+"/clothes/SHOES")
+      .get(
+        "http://localhost:8080/api/users/" +
+          sessionStorage.getItem("token") +
+          "/clothes/SHOES"
+      )
       .then((res) => {
         res.data.map((shoes_photo) => tab_shoes_temp.push(shoes_photo.photo));
         setTabShoes(tab_shoes_temp);
-        setTabShoesMainIndex(tab_shoes_temp.length > 1 ? 1 : 0)
-        setTabShoesRightIndex(tab_shoes_temp.length > 2 ? 2 : 0)
+        setTabShoesMainIndex(tab_shoes_temp.length > 1 ? 1 : 0);
+        setTabShoesRightIndex(tab_shoes_temp.length > 2 ? 2 : 0);
       })
       .catch((err) => {
         console.log(err);
       });
   };
   return (
-  <body>
-    <div className="App">
-      <div className="void20" />
-      <h2 className="Resume">Try your clothes here and get your style bro !</h2>
-      <p className="Resume">Click on the arrows to change elements.</p>
-      <div className="void20" />
-      <div className="parent1">
-        <div className="body">
-          <div className="mainhat">
-            <img
-              id="mainhat"
-              src={tabHats[tabHatsMainIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="mainshirt">
-            <img
-              id="mainshirt"
-              src={tabTops[tabTopsMainIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="mainpants">
-            <img
-              id="mainpants"
-              src={tabPants[tabPantsMainIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="mainshoes">
-            <img
-              id="mainshoes"
-              src={tabShoes[tabShoesMainIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="lefthat">
-            <img
-              id="lefthat"
-              className="imgside"
-              src={tabHats[tabHatsLeftIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="leftshirt">
-            <img
-              id="leftshirt"
-              className="imgside"
-              src={tabTops[tabTopsLeftIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="leftpants">
-            <img
-              id="leftpants"
-              className="imgside"
-              src={tabPants[tabPantsLeftIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="leftshoes">
-            <img
-              id="leftshoes"
-              className="imgside"
-              src={tabShoes[tabShoesLeftIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="righthat">
-            <img
-              id="righthat"
-              className="imgside"
-              src={tabHats[tabHatsRightIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="rightshirt">
-            <img
-              id="rightshirt"
-              className="imgside"
-              src={tabTops[tabTopsRightIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="rightpants">
-            <img
-              id="rightpants"
-              className="imgside"
-              src={tabPants[tabPantsRightIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
-          <div className="rightshoes">
-            <img
-              id="rightshoes"
-              className="imgside"
-              src={tabShoes[tabShoesRightIndex]}
-              alt="ERREUR, l'image n'a pas pu être trouvée"
-            />
-          </div>
+    <body>
+      <div className="App">
+        <h1 className="logotitle">W@rdrobe</h1>
+        <div className="resumeGroup">
+          <h2 className="resume">
+            Try your clothes here and get your style bro !
+          </h2>
+          <p className="resume">Click on the arrows to change elements.</p>
         </div>
-        <div className="left">
-          <div className="div1">
-            <button onClick={decrementHats}>&lt;</button>
+        <div className="tryonGrid">
+          <div className="clothes">
+            <div className="mainhat">
+              <img
+                src={tabHats[tabHatsMainIndex]}
+                alt=""
+              />
+            </div>
+            <div className="mainshirt">
+              <img
+                src={tabTops[tabTopsMainIndex]}
+                alt=""
+              />
+            </div>
+            <div className="mainpants">
+              <img
+                src={tabPants[tabPantsMainIndex]}
+                alt=""
+              />
+            </div>
+            <div className="mainshoes">
+              <img
+                src={tabShoes[tabShoesMainIndex]}
+                alt=""
+              />
+            </div>
+            <div className="lefthat">
+              <img
+                className="imgside"
+                src={tabHats[tabHatsLeftIndex]}
+                alt=""
+              />
+            </div>
+            <div className="leftshirt">
+              <img
+                className="imgside"
+                src={tabTops[tabTopsLeftIndex]}
+                alt=""
+              />
+            </div>
+            <div className="leftpants">
+              <img
+                className="imgside"
+                src={tabPants[tabPantsLeftIndex]}
+                alt=""
+              />
+            </div>
+            <div className="leftshoes">
+              <img
+                className="imgside"
+                src={tabShoes[tabShoesLeftIndex]}
+                alt=""
+              />
+            </div>
+            <div className="righthat">
+              <img
+                className="imgside"
+                src={tabHats[tabHatsRightIndex]}
+                alt=""
+              />
+            </div>
+            <div className="rightshirt">
+              <img
+                className="imgside"
+                src={tabTops[tabTopsRightIndex]}
+                alt=""
+              />
+            </div>
+            <div className="rightpants">
+              <img
+                className="imgside"
+                src={tabPants[tabPantsRightIndex]}
+                alt=""
+              />
+            </div>
+            <div className="rightshoes">
+              <img
+                className="imgside"
+                src={tabShoes[tabShoesRightIndex]}
+                alt=""
+              />
+            </div>
           </div>
-          <div className="div2">
-            <button onClick={decrementTops}>&lt;</button>
+          <div className="left">
+            <div className="div1 mt-10">
+              <IconButton
+                className="arrow"
+                aria-label="decrement"
+                size="large"
+                onClick={decrementHats}
+              >
+                <ArrowLeftRoundedIcon fontSize="inherit" />
+              </IconButton>
+            </div>
+            <div className="div2 mt-10">
+              <IconButton
+                className="arrow"
+                aria-label="decrement"
+                size="large"
+                onClick={decrementTops}
+              >
+                <ArrowLeftRoundedIcon fontSize="inherit" />
+              </IconButton>
+            </div>
+            <div className="div3 mt-10">
+              <IconButton
+                className="arrow"
+                aria-label="decrement"
+                size="large"
+                onClick={decrementPants}
+              >
+                <ArrowLeftRoundedIcon fontSize="inherit" />
+              </IconButton>
+            </div>
+            <div className="div4 mt-10">
+              <IconButton
+                className="arrow"
+                aria-label="decrement"
+                size="large"
+                onClick={decrementShoes}
+              >
+                <ArrowLeftRoundedIcon fontSize="inherit" />
+              </IconButton>
+            </div>
           </div>
-          <div className="div3">
-            <button onClick={decrementPants}>&lt;</button>
-          </div>
-          <div className="div4">
-            <button onClick={decrementShoes}>&lt;</button>
-          </div>
-        </div>
-        <div className="right">
-          <div className="div1">
-            <button onClick={incrementHats}>&gt;</button>
-          </div>
-          <div className="div2">
-            <button onClick={incrementTops}>&gt;</button>
-          </div>
-          <div className="div3">
-            <button onClick={incrementPants}>&gt;</button>
-          </div>
-          <div className="div4">
-            <button onClick={incrementShoes}>&gt;</button>
+          <div className="right">
+            <div className="div1 mt-10">
+              <IconButton
+                className="arrow"
+                aria-label="decrement"
+                size="large"
+                onClick={incrementHats}
+              >
+                <ArrowRightRoundedIcon fontSize="inherit" />
+              </IconButton>
+            </div>
+            <div className="div2 mt-10">
+              <IconButton
+                className="arrow"
+                aria-label="decrement"
+                size="large"
+                onClick={incrementTops}
+              >
+                <ArrowRightRoundedIcon fontSize="inherit" />
+              </IconButton>
+            </div>
+            <div className="div3 mt-10">
+              <IconButton
+                className="arrow"
+                aria-label="decrement"
+                size="large"
+                onClick={incrementPants}
+              >
+                <ArrowRightRoundedIcon fontSize="inherit" />
+              </IconButton>
+            </div>
+            <div className="div4 mt-10">
+              <IconButton
+                className="arrow"
+                aria-label="decrement"
+                size="large"
+                onClick={incrementShoes}
+              >
+                <ArrowRightRoundedIcon fontSize="inherit" />
+              </IconButton>
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </body>
   );
 
   function incrementHats() {
-    console.log(tabHatsMainIndex);
-    console.log(tabHatsLeftIndex);
-    console.log(tabHatsRightIndex);
     tabHatsMainIndex < tabHats.length - 1
       ? setTabHatsMainIndex(tabHatsMainIndex + 1)
       : setTabHatsMainIndex(0);
@@ -230,15 +294,9 @@ const TryOn = () => {
     tabHatsRightIndex < tabHats.length - 1
       ? setTabHatsRightIndex(tabHatsRightIndex + 1)
       : setTabHatsRightIndex(0);
-    console.log(tabHatsMainIndex);
-    console.log(tabHatsLeftIndex);
-    console.log(tabHatsRightIndex);
   }
 
   function decrementHats() {
-    console.log(tabHatsMainIndex);
-    console.log(tabHatsLeftIndex);
-    console.log(tabHatsRightIndex);
     tabHatsMainIndex > 0
       ? setTabHatsMainIndex(tabHatsMainIndex - 1)
       : setTabHatsMainIndex(tabHats.length - 1);
@@ -248,9 +306,6 @@ const TryOn = () => {
     tabHatsRightIndex > 0
       ? setTabHatsRightIndex(tabHatsRightIndex - 1)
       : setTabHatsRightIndex(tabHats.length - 1);
-    console.log(tabHatsMainIndex);
-    console.log(tabHatsLeftIndex);
-    console.log(tabHatsRightIndex);
   }
 
   function incrementTops() {
@@ -263,7 +318,6 @@ const TryOn = () => {
     tabTopsRightIndex < tabTops.length - 1
       ? setTabTopsRightIndex(tabTopsRightIndex + 1)
       : setTabTopsRightIndex(0);
-    console.log(tabTopsMainIndex);
   }
 
   function decrementTops() {
@@ -276,7 +330,6 @@ const TryOn = () => {
     tabTopsRightIndex > 0
       ? setTabTopsRightIndex(tabTopsRightIndex - 1)
       : setTabTopsRightIndex(tabTops.length - 1);
-    console.log(tabTopsMainIndex);
   }
 
   function incrementPants() {
@@ -289,7 +342,6 @@ const TryOn = () => {
     tabPantsRightIndex < tabPants.length - 1
       ? setTabPantsRightIndex(tabPantsRightIndex + 1)
       : setTabPantsRightIndex(0);
-    console.log(tabPantsMainIndex);
   }
 
   function decrementPants() {
@@ -302,7 +354,6 @@ const TryOn = () => {
     tabPantsRightIndex > 0
       ? setTabPantsRightIndex(tabPantsRightIndex - 1)
       : setTabPantsRightIndex(tabPants.length - 1);
-    console.log(tabPantsMainIndex);
   }
 
   function incrementShoes() {
@@ -315,7 +366,6 @@ const TryOn = () => {
     tabShoesRightIndex < tabShoes.length - 1
       ? setTabShoesRightIndex(tabShoesRightIndex + 1)
       : setTabShoesRightIndex(0);
-    console.log(tabShoesMainIndex);
   }
 
   function decrementShoes() {
@@ -328,7 +378,6 @@ const TryOn = () => {
     tabShoesRightIndex > 0
       ? setTabShoesRightIndex(tabShoesRightIndex - 1)
       : setTabShoesRightIndex(tabShoes.length - 1);
-    console.log(tabShoesMainIndex);
   }
 };
 
