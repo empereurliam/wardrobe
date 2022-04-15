@@ -7,13 +7,15 @@ Bienvenue dans W@rdrobe, l'application qui vous permet d'essayer toute une garde
 **************************** LANCER LE PROJET ****************************
 
 BACK-END : 
-            - faire un *maven clean-install* sur le projet. 
-            - se mettre dans le dossier hsqldb-2.6.1 2/hsqldb et démarrer la base de données avec la commande *java -classpath lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:hsqldb/demodb --dbname.0 database*. 
-            - démarrer le projet grâce à l'IDE. 
+            
+- faire un *maven clean-install* sur le projet. 
+- se mettre dans le dossier hsqldb-2.6.1 2/hsqldb et démarrer la base de données avec la commande *java -classpath lib/hsqldb.jar org.hsqldb.server.Server --database.0 file:hsqldb/demodb --dbname.0 database*. 
+- démarrer le projet grâce à l'IDE. 
             
 FRONT-END :
-            - faire un *npm i* afin d'installer les dépendances et créer le répertoire node-modules. 
-            - lancer le projet avec la commande *npm run-start*. 
+
+- faire un *npm i* afin d'installer les dépendances et créer le répertoire node-modules. 
+- lancer le projet avec la commande *npm run-start*. 
 
 
 Accéder ensuite au site web sur l'url http://localhost:3000
