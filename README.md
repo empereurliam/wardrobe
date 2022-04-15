@@ -26,38 +26,9 @@ Accéder ensuite au site web sur l'url http://localhost:3000
 ![Alt text](doc/schema_interactions.png?raw=true "Title")
 
 
-
-
-
-
-
-
-
-
-
-
-
 ******************** SCHÉMA DE LA BASE DE DONNÉES ********************
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Alt text](doc/schema_bdd.png?raw=true "Title")
 
 
 ******************** RÉPARTITION DU TRAVAIL ********************
