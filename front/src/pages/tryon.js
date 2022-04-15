@@ -196,7 +196,7 @@ const TryOn = () => {
             </div>
           </div>
           <div className="left">
-            <div className="div1 mt-10">
+            <div className="hatArrow mt-10">
               <IconButton
                 className="arrow"
                 aria-label="decrement"
@@ -206,7 +206,7 @@ const TryOn = () => {
                 <ArrowLeftRoundedIcon fontSize="inherit" />
               </IconButton>
             </div>
-            <div className="div2 mt-10">
+            <div className="topArrow mt-10">
               <IconButton
                 className="arrow"
                 aria-label="decrement"
@@ -216,7 +216,7 @@ const TryOn = () => {
                 <ArrowLeftRoundedIcon fontSize="inherit" />
               </IconButton>
             </div>
-            <div className="div3 mt-10">
+            <div className="pantsArrow mt-10">
               <IconButton
                 className="arrow"
                 aria-label="decrement"
@@ -226,7 +226,7 @@ const TryOn = () => {
                 <ArrowLeftRoundedIcon fontSize="inherit" />
               </IconButton>
             </div>
-            <div className="div4 mt-10">
+            <div className="shoesArrow mt-10">
               <IconButton
                 className="arrow"
                 aria-label="decrement"
@@ -238,7 +238,7 @@ const TryOn = () => {
             </div>
           </div>
           <div className="right">
-            <div className="div1 mt-10">
+            <div className="hatArrow mt-10">
               <IconButton
                 className="arrow"
                 aria-label="decrement"
@@ -248,7 +248,7 @@ const TryOn = () => {
                 <ArrowRightRoundedIcon fontSize="inherit" />
               </IconButton>
             </div>
-            <div className="div2 mt-10">
+            <div className="topArrow mt-10">
               <IconButton
                 className="arrow"
                 aria-label="decrement"
@@ -258,7 +258,7 @@ const TryOn = () => {
                 <ArrowRightRoundedIcon fontSize="inherit" />
               </IconButton>
             </div>
-            <div className="div3 mt-10">
+            <div className="pantsArrow mt-10">
               <IconButton
                 className="arrow"
                 aria-label="decrement"
@@ -268,7 +268,7 @@ const TryOn = () => {
                 <ArrowRightRoundedIcon fontSize="inherit" />
               </IconButton>
             </div>
-            <div className="div4 mt-10">
+            <div className="shoesArrow mt-10">
               <IconButton
                 className="arrow"
                 aria-label="decrement"
