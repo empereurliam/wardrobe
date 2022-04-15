@@ -1,9 +1,11 @@
 @font-face {
-    font-family: 'Gabriela Stencil';
-    src: local('Gabriela Stencil'), url("fonts/GabrielaStencil-Black.ttf") format('truetype');
+  font-family: "Gabriela Stencil";
+  src: local("Gabriela Stencil"),
+    url("fonts/GabrielaStencil-Black.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: 'Blacker Pro Text';
-    src: local('Blacker Pro Text'), url("fonts/Zetafonts - Blacker Pro Text Light.otf") format('truetype');
+  font-family: "Blacker Pro Text";
+  src: local("Blacker Pro Text"),
+    url("fonts/Zetafonts - Blacker Pro Text Light.otf") format("truetype");
 }

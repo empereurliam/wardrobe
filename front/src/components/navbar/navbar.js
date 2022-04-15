@@ -12,7 +12,9 @@ export default function Navbar() {
           <a href="/tryon">Try on</a>
         </li>
         <li>
-          <a className="centerItem" href="/select">Select</a>
+          <a className="centerItem" href="/select">
+            Select
+          </a>
         </li>
         <li>
           <a href="/">

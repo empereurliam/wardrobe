@@ -115,42 +115,22 @@ const TryOn = () => {
         <div className="tryonGrid">
           <div className="clothes">
             <div className="mainhat">
-              <img
-                src={tabHats[tabHatsMainIndex]}
-                alt=""
-              />
+              <img src={tabHats[tabHatsMainIndex]} alt="" />
             </div>
             <div className="mainshirt">
-              <img
-                src={tabTops[tabTopsMainIndex]}
-                alt=""
-              />
+              <img src={tabTops[tabTopsMainIndex]} alt="" />
             </div>
             <div className="mainpants">
-              <img
-                src={tabPants[tabPantsMainIndex]}
-                alt=""
-              />
+              <img src={tabPants[tabPantsMainIndex]} alt="" />
             </div>
             <div className="mainshoes">
-              <img
-                src={tabShoes[tabShoesMainIndex]}
-                alt=""
-              />
+              <img src={tabShoes[tabShoesMainIndex]} alt="" />
             </div>
             <div className="lefthat">
-              <img
-                className="imgside"
-                src={tabHats[tabHatsLeftIndex]}
-                alt=""
-              />
+              <img className="imgside" src={tabHats[tabHatsLeftIndex]} alt="" />
             </div>
             <div className="leftshirt">
-              <img
-                className="imgside"
-                src={tabTops[tabTopsLeftIndex]}
-                alt=""
-              />
+              <img className="imgside" src={tabTops[tabTopsLeftIndex]} alt="" />
             </div>
             <div className="leftpants">
               <img

@@ -14,11 +14,7 @@ html {
 
 body {
   height: 100%;
-  background: linear-gradient(
-    to right,
-    #ffdcc4 70%,
-    #2c2622 70%
-  );
+  background: linear-gradient(to right, #ffdcc4 70%, #2c2622 70%);
   align-items: center;
 }
 
@@ -370,7 +366,7 @@ input {
 #validate {
   position: fixed;
   bottom: 3%;
-  right:32%;
+  right: 32%;
   font-family: "Blacker Pro Text";
 }
 

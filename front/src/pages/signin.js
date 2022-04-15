@@ -29,7 +29,7 @@ export default function SignIn({ setToken }) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if(accountExist){
+    if (accountExist) {
       const token = await signInUser({
         mail,
         password,
@@ -49,61 +49,61 @@ export default function SignIn({ setToken }) {
 
   if (accountExist) {
     return (
-    <body>
-      <div className="login-wrapper">
-        <h1>Please Sign In</h1>
-        <button type="submit" onClick={() => setAccountExist(false)}>
-          I don't have an account
-        </button>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <p>Mail</p>
-            <input type="text" onChange={(e) => setMail(e.target.value)} />
-          </label>
-          <label>
-            <p>Password</p>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
-          <div>
-            <button type="submit">Sign In</button>
-          </div>
-        </form>
-      </div>
+      <body>
+        <div className="login-wrapper">
+          <h1>Please Sign In</h1>
+          <button type="submit" onClick={() => setAccountExist(false)}>
+            I don't have an account
+          </button>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <p>Mail</p>
+              <input type="text" onChange={(e) => setMail(e.target.value)} />
+            </label>
+            <label>
+              <p>Password</p>
+              <input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+            <div>
+              <button type="submit">Sign In</button>
+            </div>
+          </form>
+        </div>
       </body>
     );
   } else {
     return (
-    <body>
-      <div className="login-wrapper">
-        <h1>Please Sign Up</h1>
-        <button type="submit" onClick={() => setAccountExist(true)}>
-          I have an account
-        </button>
-        <form onSubmit={handleSubmit}>
-          <label>
-            <p>Name</p>
-            <input type="text" onChange={(e) => setName(e.target.value)} />
-          </label>
-          <label>
-            <p>Mail</p>
-            <input type="text" onChange={(e) => setMail(e.target.value)} />
-          </label>
-          <label>
-            <p>Password</p>
-            <input
-              type="password"
-              onChange={(e) => setPassword(e.target.value)}
-            />
-          </label>
-          <div>
-            <button type="submit">Sign Up</button>
-          </div>
-        </form>
-      </div>
-     </body>
+      <body>
+        <div className="login-wrapper">
+          <h1>Please Sign Up</h1>
+          <button type="submit" onClick={() => setAccountExist(true)}>
+            I have an account
+          </button>
+          <form onSubmit={handleSubmit}>
+            <label>
+              <p>Name</p>
+              <input type="text" onChange={(e) => setName(e.target.value)} />
+            </label>
+            <label>
+              <p>Mail</p>
+              <input type="text" onChange={(e) => setMail(e.target.value)} />
+            </label>
+            <label>
+              <p>Password</p>
+              <input
+                type="password"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </label>
+            <div>
+              <button type="submit">Sign Up</button>
+            </div>
+          </form>
+        </div>
+      </body>
     );
   }
 }

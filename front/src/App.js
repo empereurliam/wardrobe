@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Select from "./pages/select";
 import Import from "./pages/import";
-import SignOut from "./pages/signout"
+import SignOut from "./pages/signout";
 import TryOn from "./pages/tryon";
 import Wardrobe from "./pages/wardrobe";
 import Navbar from "./components/navbar/navbar";

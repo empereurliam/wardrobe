@@ -105,100 +105,111 @@ const Select = () => {
       });
   };
   return (
-  <body>
-  <h1 className="logotitle">W@rdrobe</h1>
-  <div className="select_clothes w-70">
-      <div className="hats">
-        <h2 className="blacker">Select your HATS</h2>
-        <div className="item-container">
-          {hats.map((hats) => (
-            <div
-              className="hat_item"
-              id={hats.id}
-              onClick={() =>
-                handleClick(hatsSelected, setHatsSelected, hats.id)
-              }
-            >
-              <img src={hats.photo} />
-            </div>
-          ))}
+    <body>
+      <h1 className="logotitle">W@rdrobe</h1>
+      <div className="select_clothes w-70">
+        <div className="hats">
+          <h2 className="blacker">Select your HATS</h2>
+          <div className="item-container">
+            {hats.map((hats) => (
+              <div
+                className="hat_item"
+                id={hats.id}
+                onClick={() =>
+                  handleClick(hatsSelected, setHatsSelected, hats.id)
+                }
+              >
+                <img src={hats.photo} />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="tops">
-        <h2 className="blacker">Select your TOPS</h2>
-        <div className="item-container">
-          {tops.map((tops) => (
-            <div
-              className={"top_item"}
-              id={tops.id}
-              onClick={() =>
-                handleClick(topsSelected, setTopsSelected, tops.id)
-              }
-            >
-              <img src={tops.photo} />
-            </div>
-          ))}
+        <div className="tops">
+          <h2 className="blacker">Select your TOPS</h2>
+          <div className="item-container">
+            {tops.map((tops) => (
+              <div
+                className={"top_item"}
+                id={tops.id}
+                onClick={() =>
+                  handleClick(topsSelected, setTopsSelected, tops.id)
+                }
+              >
+                <img src={tops.photo} />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="pants">
-        <h2 className="blacker">Select your PANTS</h2>
-        <div className="item-container">
-          {pants.map((pants) => (
-            <div
-              className="pants_item"
-              id={pants.id}
-              onClick={() =>
-                handleClick(pantsSelected, setPantsSelected, pants.id)
-              }
-            >
-              <img src={pants.photo} />
-            </div>
-          ))}
+        <div className="pants">
+          <h2 className="blacker">Select your PANTS</h2>
+          <div className="item-container">
+            {pants.map((pants) => (
+              <div
+                className="pants_item"
+                id={pants.id}
+                onClick={() =>
+                  handleClick(pantsSelected, setPantsSelected, pants.id)
+                }
+              >
+                <img src={pants.photo} />
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
-      <div className="shoes">
-        <h2 className="blacker">Select your SHOES</h2>
-        <div className="item-container">
-          {shoes.map((shoes) => (
-            <div
-              className="shoes_item"
-              id={shoes.id}
-              onClick={() =>
-                handleClick(shoesSelected, setShoesSelected, shoes.id)
-              }
-            >
-              <img src={shoes.photo} />
-            </div>
-          ))}
+        <div className="shoes">
+          <h2 className="blacker">Select your SHOES</h2>
+          <div className="item-container">
+            {shoes.map((shoes) => (
+              <div
+                className="shoes_item"
+                id={shoes.id}
+                onClick={() =>
+                  handleClick(shoesSelected, setShoesSelected, shoes.id)
+                }
+              >
+                <img src={shoes.photo} />
+              </div>
+            ))}
+          </div>
         </div>
+        <a href="/">
+          <Button
+            onClick={addClothesToUser}
+            id="validate"
+            variant="outlined"
+            startIcon={<TaskAltIcon />}
+          >
+            ADD
+          </Button>
+        </a>
       </div>
-      <a href="/">
-      <Button onClick={addClothesToUser} id="validate" variant="outlined" startIcon={<TaskAltIcon />}>
-        ADD
-      </Button>
-      </a>
-    </div>
     </body>
   );
 
   function addClothesToUser() {
-      for (const id of selected_clothes) {
-          console.log(id);
-          const options = {
-              method: 'POST',
-              url: 'http://localhost:8080/api/users/'+sessionStorage.getItem('token')+'/clothes',
-              params: {'': ''},
-              headers: {'Content-Type': 'application/json'},
-              data: {idClothe: id}
-          };
+    for (const id of selected_clothes) {
+      console.log(id);
+      const options = {
+        method: "POST",
+        url:
+          "http://localhost:8080/api/users/" +
+          sessionStorage.getItem("token") +
+          "/clothes",
+        params: { "": "" },
+        headers: { "Content-Type": "application/json" },
+        data: { idClothe: id },
+      };
 
-          axios.request(options).then(function (response) {
-              console.log(response.data);
-          }).catch(function (error) {
-              console.error(error);
-          });
-      }
-      alert("The clothes have been successfully added to your w@rdrobe !");
+      axios
+        .request(options)
+        .then(function (response) {
+          console.log(response.data);
+        })
+        .catch(function (error) {
+          console.error(error);
+        });
+    }
+    alert("The clothes have been successfully added to your w@rdrobe !");
   }
 };
 
