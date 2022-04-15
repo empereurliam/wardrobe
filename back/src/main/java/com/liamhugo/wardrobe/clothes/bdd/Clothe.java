@@ -22,8 +22,6 @@ public class Clothe {
     private String type;
     private String brand;
     private String price;
-    @ManyToMany(fetch= FetchType.EAGER)
-    Set<User> users;
 
     public Long getId() {
         return id;
@@ -64,8 +62,4 @@ public class Clothe {
     public void setPrice(String price) {
         this.price = price;
     }
-
-    public Set<User> getUsers() { return users; }
-
-    public void setUsers(Set<User> users) { this.users = users; }
 }

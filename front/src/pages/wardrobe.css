@@ -157,7 +157,7 @@ h1 {
   grid-area: 1 / 2 / 2 / 4;
 }
 .mainhat img {
-  max-height: 80%;
+  max-width: 10vw;
 }
 .mainshirt {
   overflow: hidden;
@@ -172,7 +172,7 @@ h1 {
   grid-area: 4 / 2 / 5 / 4;
 }
 .mainshoes img {
-  max-height: 80%;
+  max-width: 10vw;
 }
 .lefthat {
   overflow: hidden;
