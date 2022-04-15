@@ -23,7 +23,7 @@ Accéder ensuite au site web sur l'url http://localhost:3000
 ******************** SCHÉMA DU FONCTIONNEMENT GLOBAL DE L'APPLICATION ********************
 
 
-
+![Alt text](doc/schema_interactions.png?raw=true "Title")
 
 
 
