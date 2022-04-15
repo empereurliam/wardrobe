@@ -1,13 +1,11 @@
 package com.liamhugo.wardrobe.clothes.bdd;
 
-import com.liamhugo.wardrobe.users.bdd.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.util.Set;
 
 @Entity
 @Data
