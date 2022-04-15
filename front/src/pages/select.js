@@ -106,9 +106,10 @@ const Select = () => {
   };
   return (
   <body>
-    <div className="select_clothes w-70">
+  <h1 className="logotitle">W@rdrobe</h1>
+  <div className="select_clothes w-70">
       <div className="hats">
-        <h2>Select your HATS</h2>
+        <h2 className="blacker">Select your HATS</h2>
         <div className="item-container">
           {hats.map((hats) => (
             <div
@@ -124,7 +125,7 @@ const Select = () => {
         </div>
       </div>
       <div className="tops">
-        <h2>Select your TOPS</h2>
+        <h2 className="blacker">Select your TOPS</h2>
         <div className="item-container">
           {tops.map((tops) => (
             <div
@@ -140,7 +141,7 @@ const Select = () => {
         </div>
       </div>
       <div className="pants">
-        <h2>Select your PANTS</h2>
+        <h2 className="blacker">Select your PANTS</h2>
         <div className="item-container">
           {pants.map((pants) => (
             <div
@@ -156,7 +157,7 @@ const Select = () => {
         </div>
       </div>
       <div className="shoes">
-        <h2>Select your SHOES</h2>
+        <h2 className="blacker">Select your SHOES</h2>
         <div className="item-container">
           {shoes.map((shoes) => (
             <div
@@ -171,9 +172,11 @@ const Select = () => {
           ))}
         </div>
       </div>
+      <a href="/">
       <Button onClick={addClothesToUser} id="validate" variant="outlined" startIcon={<TaskAltIcon />}>
         ADD
       </Button>
+      </a>
     </div>
     </body>
   );
@@ -195,6 +198,7 @@ const Select = () => {
               console.error(error);
           });
       }
+      alert("The clothes have been successfully added to your w@rdrobe !");
   }
 };
 
