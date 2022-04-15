@@ -87,4 +87,25 @@ public class UserResource {
         userRepository.save(u);
         return Response.ok(u).build();
     }
+
+    @GET
+    @Path("{idUser}/clothes/{type}")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Clothe> getUserClothes(@PathParam("idUser") Long idUser, @PathParam("type") String type) {
+        List<Clothe> clothes_wanted = new ArrayList<>();
+        Optional<User> uOpt = userRepository.findById(idUser);
+
+        if (!uOpt.isPresent()) {
+            return null;
+        }
+
+        User u = uOpt.get();
+        var clothes = u.getClothes();
+        clothes.forEach(clothe -> {
+            if(clothe.getType().equals(type)) {
+                clothes_wanted.add(clothe);
+            }
+        });
+        return clothes_wanted;
+    }
 }

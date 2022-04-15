@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.DynamicUpdate;
 
 import javax.persistence.*;
-import java.util.Collection;
 import java.util.Set;
 
 @Entity
@@ -22,7 +21,7 @@ public class User {
     private String mail;
     private String password;
     private String name;
-    @ManyToMany(cascade = CascadeType.ALL, fetch= FetchType.EAGER)
+    @ManyToMany(fetch= FetchType.EAGER)
     Set<Clothe> clothes;
 
     public Long getId() {
